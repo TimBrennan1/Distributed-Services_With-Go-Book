@@ -20,6 +20,7 @@ type segment struct {
 func newSegment(dir string, baseOffset uint64, c Config) (*segment, error){
 	s := &segment{baseOffset: baseOffset, config: c}
 
+	//The base offset here in the file name is important for sorting through the segments in the log
 	storeFile, err := os.OpenFile(path.Join(dir, fmt.Sprintf("%d%s", baseOffset, ".store")), os.O_RDWR | os.O_CREATE|os.O_APPEND, 0644)
 	if err != nil {
 		return nil, err
