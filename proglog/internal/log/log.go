@@ -107,7 +107,6 @@ type originReader struct {
 	defer l.mu.RUnlock()
 
 	off := l.segments[len(l.segments) - 1].nextOffset
-
 	return off - 1, nil
  }
 
