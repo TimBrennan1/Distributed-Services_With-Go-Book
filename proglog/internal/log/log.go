@@ -137,8 +137,8 @@ type originReader struct {
 
 	readers := make([]io.Reader, len(l.segments))
 
-	for _, segment := range l.segments {
-		readers = append(readers, &originReader{segment.store, 0})
+	for i, segment := range l.segments {
+		readers[i] = &originReader{segment.store, 0}
 	}
 
 	//concatenates the segment stores
