@@ -137,6 +137,7 @@ type originReader struct {
 
 	readers := make([]io.Reader, len(l.segments))
 
+	// Cant append, since when making, we create a slice of nils
 	for i, segment := range l.segments {
 		readers[i] = &originReader{segment.store, 0}
 	}
