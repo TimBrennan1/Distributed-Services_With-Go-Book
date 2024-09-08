@@ -1,7 +1,6 @@
 package log
 
 import (
-	"fmt"
 	"io"
 	"os"
 	"path"
@@ -86,7 +85,7 @@ type originReader struct {
 	}
 
 	if s == nil || s.nextOffset <= off {
-		return nil, fmt.Errorf("offset out of range: %d", off)
+		return nil, api.ErrOffsetOutOfRange{Offset: off}
 
 	}
 

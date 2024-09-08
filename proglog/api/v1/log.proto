@@ -13,7 +13,7 @@ service Log {
     rpc Produce(ProduceRequest) returns (ProduceResponse) {}
     rpc ProduceStream(stream ProduceRequest) returns (stream ProduceResponse) {}
     rpc Consume(ConsumeRequest) returns (ConsumeResponse) {}
-    rpc ConsumeStream(stream ConsumeRequest) returns (stream ConsumeResponse) {}
+    rpc ConsumeStream(ConsumeRequest) returns (stream ConsumeResponse) {}
 }
 
 message ProduceRequest {
